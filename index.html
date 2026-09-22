@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example Cafe Menu</title>
+    <style>
+        .page-container {
+            border: 2px solid #eb9898;
+            max-width: 75%;
+            margin: 0 auto;
+            padding: 0px;
+            }
+
+        h1{
+            color:#a12304;
+            font-style:italic;
+        }
+
+        .shadow-heading{
+            text-shadow: 8px 8px 1px rgba(236, 146, 146, 0.6); 
+            font-weight:bold;   
+        }
+
+        .nav{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            gap: 15px;
+            border-top: 2px solid #e75f5f;
+            max-width: 100%;
+            margin: 0px 0px 5px;
+            padding: 5px 5px;
+            background-color:#eb9898
+        }  
+       .foot {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top: 2px solid #e75f5f;
+        width: 100%;
+        margin-top: 0;
+        padding: 2px 0px;
+        background-color: #eb9898;
+        box-sizing: border-box;
+        }
+
+        .nav a{
+            text-decoration: none;
+            font-weight:bold;
+            color:white;
+            padding: 8px 20px;
+            border-right: 2px solid #2b3990;
+            height:25px
+        }
+        .home-icon{
+            height:25px;
+            transform: translateY(-6px);
+            vertical-align: middle;
+        }
+
+        .main-layout {
+        display: grid;
+        grid-template-columns: 200px 280px 380px; 
+        gap: 20px;
+        align-items: start;
+
+        }
+        .oval-img {
+            width: 220px;
+            height: 150px;
+            border-radius: 50%;  
+            box-shadow: 15px 18px 15px rgba(235, 152, 152, 0.6); 
+            margin-top: 15px;      
+        }
+        .left-sidebar {
+        display: flex;
+        flex-direction: column; 
+        align-items: flex-start;                   
+        }
+
+        .sidebar-button {
+        text-decoration: none;
+        display:flex;
+        background-color: #eb9898; 
+        color: white;
+        border-radius: 20px;         
+        border: none;           
+        display: block;           
+        margin-bottom: 1px;  
+        margin-top:5px;
+        width: 200px;   
+        padding-left: 20px;  
+        padding-top: 9px;
+        padding-bottom: 9px;   
+        padding-right: 15px;
+        }
+
+        .center-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        text-align: left; 
+        }
+
+        .center-menu span {
+        color: red;
+        font-size: 0.9em;
+        }
+
+        .section{
+            background-color:#eb9898;
+            color:#a12304;
+            font-weight:bold;
+            font-size:20px;
+            padding: 0px 200px 0px 30px;
+            margin-top:3px;
+            margin-left:580px;
+            width:75%;
+            letter-spacing:20px;
+        }
+        .top {
+        color: #d33b3b;
+        font-weight: bold;
+        align-self: flex-start;
+        margin-bottom: 1px;
+        margin-left: 20px;
+        }
+        .center-menu ul {
+        width: 480px;
+        padding-left: 40px;
+        margin: 10px 0px;
+        box-sizing: border-box;
+        margin-left: 250px; 
+        }
+        .info{
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        gap: 8px;                
+        width: 520px;                
+        margin-left:285px;
+        margin-top:10px;
+        }
+        .info input[type="text"],
+        .info input[type="email"],
+        .info input[type="tel"] {
+            width:385px;
+            height:35px;
+            padding: 25px 10px; 
+            margin: 7px 7px;
+            font-size: 14px;         
+            box-sizing: border-box;
+        }
+        .info select {
+            width: 385px;
+            height: 50px;
+            margin: 0px 0px 0px 6px;       
+        }
+        .radio-group {
+        display: flex;
+        align-items: center; 
+        gap: 10px;           
+        height: 35px;       
+        }
+        .comments{
+            margin-left: 570px;
+            margin-top: 35px;
+            width: 760px;
+            height: 55px;
+        }
+        .button{
+            padding:5px;
+            margin-left:0px;
+            margin-top:10px;
+            margin-right:150px;
+        }
+        .button2{
+            transform: translateY(-29px);
+            margin-right: 40px;
+            padding:5px;
+        }
+        .foot h1{
+            font-size: 30px;
+            font-style:italic;
+            font-weight:bold;
+            margin: 2px 0;
+        }
+        .right-sidebar {
+        background-color: black;
+        color: white;
+        padding: 25px;
+        box-sizing: border-box;
+        width:340px;
+        margin-left:569px;
+        margin-top:5px;
+        }
+        .right-sidebar h2{
+        font-size:28px;
+        margin-top:0;
+        margin-bottom:15px;
+        transform: translateX(-24px) translateY(-22px);
+        }
+        .event-card {
+        margin-bottom: 25px;
+        padding-left:10px;
+        padding-right:10px;
+        }
+
+        .event-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            transform: translateY(-22px);
+        }
+
+        .event-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 10px;
+            transform: translateY(-32px);
+        }
+
+        .event-card p {
+            font-size: 13px;
+            line-height: 1.4;
+            margin: 0;
+            transform: translateY(-34px);
+        }
+
+        .event-card a {
+            color: #eb9898;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <h1 class="shadow-heading" align="center">EXAMPLE CAFE MENU</h1>
+        <div class="nav" align="center">
+            <a href="#home"><img src="assets\icons8-home-50.png" class="home-icon"></a>
+            <a href="#starter">STARTER</a>
+            <a href="#mains">MAIN COURSES</a>
+            <a href="#desserts">DESSERTS</a>
+            <form style="margin-left:45px">
+                <input type="text">
+                <input type="button" value="Go">
+            </form>
+        </div> 
+        <div class="main-layout">
+            <aside class="left-sidebar" >
+            <a href="#" class="sidebar-button">Cafe Latte</a>
+            <a href="#" class="sidebar-button">Cappuchino</a>
+            <a href="#" class="sidebar-button">Ocean Blue</a>
+            <a href="#" class="sidebar-button">Ice-cream Cafe</a>
+            <a href="#" class="sidebar-button">Order Online</a>
+            <img src="assets\company.png" class="oval-img">
+        </aside>
+        
+        <main class="center-menu">
+            <div class="section" style="font-size:34px;">
+                Starter
+            </div>
+            <div class="center-menu">
+            <ul>
+                <li>Chestnut and Mushroom Goujons<span>(<u>v</u>)</span></li>
+                <li>Goat Cheese<span>(<u>v</u>)</span></li>
+                <li><span style="color:rgb(216, 119, 9)"><b>HONEY SOY CHICKEN KEBABS</b></span><span>(<u>V</u>)</span></li>
+                <li>Seafood Salad<span>(<u>v</u>)</span></li>
+            </ul>
+            </div>
+            <a href="#top" class="top">Back to top</a>
+            <div class="section" style="font-size:34px;">
+                Desserts
+            </div>
+            <ul>
+                <li>Lemon Sorbet<span>(<u>v</u>)</span></li>
+                <li>Chocolate Mudpie<span>(<u>v</u>)</span></li>
+                <li>Pecan Pie<span>(<u>V</u>)</span></li>
+                <li>Selection of fine Cheeses around the World<span>(<u>v</u>)</span></li>
+            </ul>
+            <a href="#top" class="top">Back to top</a>
+            <div class="section" style="font-size:24px;">
+                INFORMATION
+            </div>
+            <form class="info">
+            <input type="text" placeholder="First Name">
+            <input type="text" placeholder="Last Name*">
+            
+            <input type="email" placeholder="Email">
+            <input type="tel" placeholder="Telephone">
+            <select name="country" id="country" >
+                <option>USA</option>
+            </select>
+            
+            <div class="radio-group">
+            
+            <label><input type="radio" name="nationality"> Vietnamese</label>
+            <label><input type="radio" name="nationality"> Foreigner</label>
+            </div> 
+
+            </form>
+            <textarea class="comments" placeholder="Comments"></textarea>
+            <form>
+                <input type="button" value="Submit" class="button">
+            </form>
+            <form>
+                <input type="button" value="Cacel" class="button2">
+            </form>
+            
+            </main>
+            <aside class="right-sidebar" style="height:550px;">
+            <h2>Events</h2>
+
+             <div class="event-card">
+            <h3>Regular Meetings</h3>
+            <img src="assets/meeting.png" alt="Regular Meetings">
+            <p>Host your regular team meetings or activities in the comfort of your own private room. <a href="#">Read more...</a></p>
+            </div>
+
+            <div class="event-card">
+            <h3>Product Launches</h3>
+            <img src="assets/launch.png" alt="Product Launches">
+                <p>Launch your product with ease in a space that truly fits its image.<a href="#">Read more...</a></p>
+            </div>
+            </aside>
+            </div>
+            <div class="foot">
+                <h1 style="color:white">ABC Company<sup>©</sup>- 12345678 - abccoffee@gmail.com</h1>
+            </div>
+        
+    </div>
+</body>
+</html>
